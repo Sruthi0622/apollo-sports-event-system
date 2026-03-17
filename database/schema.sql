@@ -117,3 +117,12 @@ CREATE TABLE Result (
     FOREIGN KEY (match_id) REFERENCES Matches(match_id),
     FOREIGN KEY (declared_by) REFERENCES Users(user_id)
 );
+ -- Volunteer (links a user with volunteer role to a game)
+CREATE TABLE Volunteer (
+    volunteer_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    game_id INT NOT NULL,
+    assigned_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (game_id) REFERENCES Game(game_id)
+);
