@@ -1,146 +1,140 @@
 Sports Event Management System – Test Cases
-Test Case 1 – Open Landing Page
-
-Description: Verify that the website landing page loads correctly.
-
-Steps:
-
-Open the website in a browser.
-
-Navigate to index.html.
+Test Case 1 – Landing Page Load
 
 Expected Result:
-The Apollo Sports Event landing page is displayed with the event title and navigation options.
+
+Page loads without delay
+
+Apollo University name is visible
+
+Current event is displayed
+
+Navigation menu works
 
 Test Case 2 – View Games Page
 
-Description: Verify that users can see the list of available games.
+Expected Result:
 
-Steps:
+Games displayed:
 
-Open the landing page.
+Cricket
 
-Click on the View Games button.
+Kabaddi
+
+Volleyball
+
+Badminton
+
+No missing or duplicate entries
+
+Test Case 3 – Open Game Details
 
 Expected Result:
-The events page opens and displays the list of games (Cricket, Kabaddi, Volleyball, Badminton).
 
-Test Case 3 – Open Game Details Page
+Game name is correct
 
-Description: Verify that clicking a game shows the game details.
+Rules are displayed properly
 
-Steps:
+Register button is visible
 
-Open the events page.
+No layout issues
 
-Click on a game (example: Cricket).
-
-Expected Result:
-The game details page opens showing:
-
-Game name
-
-Game rules
-
-Registration option
-
-Test Case 4 – Player Registration
-
-Description: Verify that a player can register for a game.
-
-Steps:
-
-Open a game page.
-
-Click Register.
-
-Enter player details (name, department, phone).
-
-Submit the form.
+Test Case 4 – Valid Player Registration
 
 Expected Result:
-The player is successfully registered and the details are stored in the database.
 
-Test Case 5 – Invalid Registration
+Data saved in database
 
-Description: Verify that the system prevents empty or invalid entries.
+Player appears in list immediately
 
-Steps:
+No duplicate entry created
 
-Open the registration form.
+Test Case 5 – Invalid Registration (IMPORTANT)
 
-Leave the player name empty.
+Add more strict checks:
 
-Click Submit.
+Test inputs:
 
-Expected Result:
-An error message appears asking the user to fill all required fields.
+Empty name
 
-Test Case 6 – Display Registered Players
+Invalid phone (letters)
 
-Description: Verify that registered players appear in the player list.
-
-Steps:
-
-Register a player for a game.
-
-Refresh the game page.
+Short phone number
 
 Expected Result:
-The registered player appears in the players list.
 
-Test Case 7 – Update Match Score
+Proper error message shown
 
-Description: Verify that volunteers/PT can update the match score.
+Form should NOT submit
 
-Steps:
+Test Case 6 – Multiple Game Registration
 
-Login as a volunteer/PT.
-
-Open a match.
-
-Enter the match score.
+👉 You completely missed this (but your system supports it)
 
 Expected Result:
-The match score updates successfully and becomes visible on the website.
 
-Test Case 8 – Display Winner
+Same player can register for multiple games
 
-Description: Verify that the winner is displayed after the match is completed.
+Data stored correctly for each game
 
-Steps:
-
-Complete a match.
-
-Declare the winner.
+Test Case 7 – Player List Display
 
 Expected Result:
-The winner's name is displayed on the game page.
 
-Test Case 9 – View Past Events
+Correct player names shown
 
-Description: Verify that users can view past sports events.
+No duplicates
 
-Steps:
+Data matches database
 
-Open the history section.
+Test Case 8 – Role-Based Score Update (CRITICAL)
 
-Select a previous event.
+You wrote login, but didn’t test restriction.
 
-Expected Result:
-Past events and their results are displayed.
+Check BOTH:
 
-Test Case 10 – Navigation Between Pages
+Case A (Authorized user)
 
-Description: Verify that navigation links work correctly.
+Volunteer/PT can update score ✅
 
-Steps:
+Case B (Normal user)
 
-Open the landing page.
+Cannot edit score ❌
 
-Navigate to events page.
-
-Open a game page.
+Test Case 9 – Live Score Visibility
 
 Expected Result:
-All pages load correctly without errors.
+
+Score visible to all users
+
+Updates reflect instantly
+
+Test Case 10 – Winner Display
+
+Expected Result:
+
+Winner name correct
+
+Matches score data
+
+Visible in game + history
+
+Test Case 11 – View Past Events
+
+Expected Result:
+
+Old events visible
+
+Data is read-only
+
+No editing allowed
+
+Test Case 12 – Navigation Flow
+
+Expected Result:
+
+No broken links
+
+No page crashes
+
+Back/forward works
